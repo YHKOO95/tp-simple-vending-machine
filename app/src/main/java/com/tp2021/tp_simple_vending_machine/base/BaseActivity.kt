@@ -1,18 +1,22 @@
 package com.tp2021.tp_simple_vending_machine.base
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
+import androidx.databinding.ViewDataBinding
 
-abstract class BaseActivity : AppCompatActivity() {
+abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
 
     abstract val layoutId : Int
+
+    lateinit var viewBinding: T
 
     abstract fun onActivityCreate()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(layoutId)
+
+        viewBinding = DataBindingUtil.setContentView(this, layoutId)
 
         onActivityCreate()
 

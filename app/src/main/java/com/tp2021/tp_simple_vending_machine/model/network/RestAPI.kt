@@ -9,7 +9,7 @@ object RestAPI {
     private val gson = GsonBuilder().setLenient().create()
 
     // 서버 주소
-    private const val BASE_URL = "http://서버.주소.xx.xx/"
+    private const val BASE_URL = "http://www.somang.click/vmp/"
 
     // SingleTon
     fun getInstance(): Retrofit {

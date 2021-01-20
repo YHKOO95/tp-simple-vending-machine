@@ -12,7 +12,7 @@ abstract class BaseActivity<T : ViewDataBinding, R : BaseViewModel> : AppCompatA
 
     abstract val viewModel : R
 
-    lateinit var viewBinding: T
+    lateinit var viewDataBinding: T
 
     abstract fun initStartView()
 
@@ -23,8 +23,8 @@ abstract class BaseActivity<T : ViewDataBinding, R : BaseViewModel> : AppCompatA
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        viewBinding = DataBindingUtil.setContentView(this, layoutId)
-        viewBinding.lifecycleOwner = this
+        viewDataBinding = DataBindingUtil.setContentView(this, layoutId)
+        viewDataBinding.lifecycleOwner = this
 
         findViewById<ImageView>(com.tp2021.tp_simple_vending_machine.R.id.backBtnView)?.let { it.setOnClickListener { finish() } }
 

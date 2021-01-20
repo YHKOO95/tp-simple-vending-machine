@@ -14,14 +14,24 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     override val viewModel: MainViewModel by viewModel()
 
     override fun initStartView() {
+        viewDataBinding.viewModel = viewModel
 
     }
 
     override fun initDataBinding() {
+        with(viewModel){
+//            timeLiveData.observe(this@MainActivity, Observer {
+//                viewBinding.testText.text = it
+//
+//            })
+
+
+        }
 
     }
 
     override fun initAfterBinding() {
+
 
     }
 }

@@ -2,20 +2,28 @@ package com.tp2021.tp_simple_vending_machine.base.module
 
 import com.tp2021.tp_simple_vending_machine.model.datamodel.MainDataModel
 import com.tp2021.tp_simple_vending_machine.model.datamodel.impl.MainDataModelImpl
+import com.tp2021.tp_simple_vending_machine.model.network.RestAPI
+import com.tp2021.tp_simple_vending_machine.model.network.service.MainService
 import com.tp2021.tp_simple_vending_machine.viewModel.MainViewModel
 import org.koin.androidx.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 
 
 var networkModule = module {
-    factory<MainDataModel> { MainDataModelImpl() }
+    factory<MainDataModel> { MainDataModelImpl(get()) }
+
+
+} 
+
+var modelModule = module {
+    single<MainService> { RestAPI.getInstance().create( MainService::class.java ) }
 
 
 }
 
 
 var viewModelModule = module {
-    viewModel { MainViewModel() }
+    viewModel { MainViewModel(get()) }
 }
 
-var diModule = listOf(networkModule, viewModelModule)
+var diModule = listOf(networkModule, modelModule, viewModelModule)

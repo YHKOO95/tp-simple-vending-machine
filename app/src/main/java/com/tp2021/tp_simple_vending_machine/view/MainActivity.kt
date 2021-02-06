@@ -1,5 +1,7 @@
 package com.tp2021.tp_simple_vending_machine.view
 
+import android.widget.Toast
+import androidx.lifecycle.Observer
 import com.tp2021.tp_simple_vending_machine.R
 import com.tp2021.tp_simple_vending_machine.base.BaseActivity
 import com.tp2021.tp_simple_vending_machine.databinding.ActivityMainBinding
@@ -20,10 +22,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     override fun initDataBinding() {
         with(viewModel){
-//            timeLiveData.observe(this@MainActivity, Observer {
-//                viewBinding.testText.text = it
-//
-//            })
+            vmAllListResponse.observe(this@MainActivity, Observer {
+                Toast.makeText(this@MainActivity, "${it.msg}", Toast.LENGTH_SHORT)
+            })
 
 
         }
@@ -31,6 +32,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     }
 
     override fun initAfterBinding() {
+
+        viewModel.getVMIntegratedList()
 
 
     }

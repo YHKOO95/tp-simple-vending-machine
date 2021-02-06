@@ -2,6 +2,8 @@ package com.tp2021.tp_simple_vending_machine.model.network
 
 import com.google.gson.GsonBuilder
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import com.tp2021.tp_simple_vending_machine.BuildConfig
+import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -10,7 +12,7 @@ object RestAPI {
     private val gson = GsonBuilder().setLenient().create()
 
     // 서버 주소
-    private const val BASE_URL = "http://www.somang.click/vmp/"
+    private const val BASE_URL = "http://www.somang.click/vmp"
 
     // SingleTon
     fun getInstance(): Retrofit {
@@ -23,4 +25,6 @@ object RestAPI {
         }
         return retrofit!!
     }
+
+
 }

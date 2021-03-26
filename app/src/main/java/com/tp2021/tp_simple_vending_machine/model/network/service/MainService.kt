@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface MainService {
 
-    @GET("/vm/list")
+    @GET("vm/list")
     fun getVMIntegratedList() : Single<VendingMachineListResponse>
 
 }

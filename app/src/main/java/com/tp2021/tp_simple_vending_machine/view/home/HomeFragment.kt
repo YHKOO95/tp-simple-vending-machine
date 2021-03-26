@@ -4,7 +4,6 @@ import com.tp2021.tp_simple_vending_machine.R
 import com.tp2021.tp_simple_vending_machine.base.BaseFragment
 import com.tp2021.tp_simple_vending_machine.databinding.FragmentHomeBinding
 import com.tp2021.tp_simple_vending_machine.viewModel.MainViewModel
-import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(){
@@ -18,7 +17,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(){
 
         val name = "Administrator"
 
-        introTextView.text = "Hello, $name !!"
+        viewDataBinding.introTextView.text = "Hello, $name !!"
 
 
 

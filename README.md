@@ -5,3 +5,8 @@
  - ref) https://deque.tistory.com/110?category=984011
  
  
+2021/3/19 : gitignore 적용
+
+2021/3/26 : Network Call 오류 잡는 중 -
+    E/KOIN: [ERROR] - Error while resolving instance for class 'com.tp2021.tp_simple_vending_machine.model.network.service.MainService' - error: org.koin.error.BeanInstanceCreationException: Can't create definition for 'Single [name='MainService',class='com.tp2021.tp_simple_vending_machine.model.network.service.MainService']' due to error :null
+

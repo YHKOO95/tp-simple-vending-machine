@@ -9,15 +9,14 @@ import org.koin.androidx.viewmodel.ext.koin.viewModel
 import org.koin.dsl.module.module
 
 
-var networkModule = module {
+var modelModule = module {
     factory<MainDataModel> { MainDataModelImpl(get()) }
 
 
 } 
 
-var modelModule = module {
+var networkModule = module {
     single<MainService> { RestAPI.getInstance().create( MainService::class.java ) }
-
 
 }
 
@@ -26,4 +25,4 @@ var viewModelModule = module {
     viewModel { MainViewModel(get()) }
 }
 
-var diModule = listOf(networkModule, modelModule, viewModelModule)
+var diModule = listOf(modelModule, networkModule, viewModelModule)

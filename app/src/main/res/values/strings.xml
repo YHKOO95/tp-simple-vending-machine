@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">tp-simple-vending-machine</string>
+
+    <string name="drawer_open" translatable="false">"drawer_open"</string>
+    <string name="drawer_close" translatable="false">"drawer_close"</string>
+    <string name="user_sample"><u>User1</u></string>
+    <string name="home">홈</string>
+    <string name="search">검색</string>
+    <string name="wallet">지갑</string>
+    <string name="setting">설정</string>
+    <string name="cs_center">고객센터</string>
+    <string name="purchase_manage">구매관리</string>
+
+
 </resources>

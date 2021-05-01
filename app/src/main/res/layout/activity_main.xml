@@ -2,32 +2,40 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
+
         <variable
             name="viewModel"
-            type="com.tp2021.tp_simple_vending_machine.viewModel.MainViewModel" />
+            type="com.tp2021.tp_simple_vending_machine.viewModel.main.MainViewModel" />
 
     </data>
 
-    <LinearLayout
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
+        <LinearLayout
+            android:id="@+id/mainContentLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/testText"
-            android:textSize="20dp"
-            android:textColor="@color/black"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:id="@+id/btnView"
-            android:text="시간 불러오기"/>
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/mainViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
 
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/mainDrawerLayout"
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end">
 
+            <include layout="@layout/layout_drawer"  android:id="@+id/drawerView" />
+        </LinearLayout>
+    </androidx.drawerlayout.widget.DrawerLayout>
 
-    </LinearLayout>
 </layout>

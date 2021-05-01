@@ -3,7 +3,7 @@ package com.tp2021.tp_simple_vending_machine.base
 import android.annotation.SuppressLint
 import android.app.Application
 import android.widget.Toast
-import com.tp2021.tp_simple_vending_machine.base.module.diModule
+import com.tp2021.tp_simple_vending_machine.module.diModule
 import io.reactivex.plugins.RxJavaPlugins
 import org.koin.android.ext.android.startKoin
 

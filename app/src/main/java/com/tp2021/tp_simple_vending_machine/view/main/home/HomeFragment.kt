@@ -5,6 +5,7 @@ import com.tp2021.tp_simple_vending_machine.R
 import com.tp2021.tp_simple_vending_machine.base.BaseFragment
 import com.tp2021.tp_simple_vending_machine.databinding.FragmentHomeBinding
 import com.tp2021.tp_simple_vending_machine.viewModel.main.MainViewModel
+import net.daum.mf.map.api.MapPoint
 import net.daum.mf.map.api.MapView
 
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -24,6 +25,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(){
         val mapViewContainer = view?.findViewById(R.id.mapLayout) as ViewGroup
         mapViewContainer.addView(mapView)
 
+        mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(37.53737528, 127.00557633), true)
+
+
 
 
     }
@@ -40,7 +44,5 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(){
 
     }
 
-    fun initMap(){
 
-    }
 }

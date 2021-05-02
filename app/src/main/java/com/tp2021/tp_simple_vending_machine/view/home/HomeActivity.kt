@@ -35,8 +35,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(){
         with(viewModel){
 
             addDisposable(viewDataBinding.startBtnView.delayClicks {
+                finishAffinity()
                 startActivity(Intent(this@HomeActivity, MainActivity::class.java))
-                finish()
             })
 
 
@@ -46,6 +46,8 @@ class HomeActivity : BaseActivity<ActivityHomeBinding, HomeViewModel>(){
     private var permissionlistener: PermissionListener = object : PermissionListener {
         override fun onPermissionGranted() {
 //            Toast.makeText(this@HomeActivity, "Permission Granted", Toast.LENGTH_SHORT).show()
+            finishAffinity()
+            startActivity(Intent(this@HomeActivity, MainActivity::class.java))
         }
 
         override fun onPermissionDenied(deniedPermissions: List<String>) {

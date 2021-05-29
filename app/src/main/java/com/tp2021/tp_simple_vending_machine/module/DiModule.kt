@@ -4,6 +4,7 @@ import com.tp2021.tp_simple_vending_machine.model.datamodel.MainDataModel
 import com.tp2021.tp_simple_vending_machine.model.datamodel.impl.MainDataModelImpl
 import com.tp2021.tp_simple_vending_machine.model.network.RestAPI
 import com.tp2021.tp_simple_vending_machine.model.network.service.MainService
+import com.tp2021.tp_simple_vending_machine.view.main.search.SearchAdapter
 import com.tp2021.tp_simple_vending_machine.viewModel.home.HomeViewModel
 import com.tp2021.tp_simple_vending_machine.viewModel.main.MainViewModel
 import com.tp2021.tp_simple_vending_machine.viewModel.manage.ManageViewModel
@@ -35,4 +36,9 @@ var viewModelModule = module {
     viewModel { ManageViewModel(get()) }
 }
 
-var diModule = listOf(modelModule, networkModule, viewModelModule)
+var adapterModule = module {
+    factory { SearchAdapter() }
+
+}
+
+var diModule = listOf(modelModule, networkModule, viewModelModule, adapterModule)

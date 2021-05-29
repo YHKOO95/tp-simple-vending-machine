@@ -18,7 +18,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="n">
 
-        <meta-data android:name="com.kakao.sdk.AppKey" android:value="72f19954d1a529ce228798fb07232076"/>
+        <meta-data android:name="com.kakao.sdk.AppKey" android:value="e4609d5d198cc0ba861f04d0f83d0fcd"/>
 
         <activity android:name=".view.home.HomeActivity">
             <intent-filter>

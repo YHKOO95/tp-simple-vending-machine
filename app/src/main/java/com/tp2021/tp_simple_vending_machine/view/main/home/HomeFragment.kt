@@ -1,13 +1,15 @@
 package com.tp2021.tp_simple_vending_machine.view.main.home
 
+import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import com.tp2021.tp_simple_vending_machine.R
 import com.tp2021.tp_simple_vending_machine.base.BaseFragment
 import com.tp2021.tp_simple_vending_machine.databinding.FragmentHomeBinding
+import com.tp2021.tp_simple_vending_machine.view.main.MainActivity
 import com.tp2021.tp_simple_vending_machine.viewModel.main.MainViewModel
-import net.daum.mf.map.api.MapPoint
-import net.daum.mf.map.api.MapView
-
+import net.daum.mf.map.api.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -20,16 +22,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(){
 
     override fun initStartView() {
 
-        val mapView = MapView(context)
-
-        val mapViewContainer = view?.findViewById(R.id.mapLayout) as ViewGroup
-        mapViewContainer.addView(mapView)
-
-        mapView.setMapCenterPoint(MapPoint.mapPointWithGeoCoord(37.53737528, 127.00557633), true)
-
-
-
-
+//        val mapView = MapView(activity)
+//
+//        val mapViewContainer = viewDataBinding.mapContainer as ViewGroup
+//
+//        mapViewContainer.addView(mapView)
     }
 
     override fun initDataBinding() {
@@ -44,5 +41,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(){
 
     }
 
+//    // CalloutBalloonAdapter 인터페이스 구현
+//    inner class CustomCalloutBalloonAdapter : CalloutBalloonAdapter {
+//        private val mCalloutBalloon: View = layoutInflater.inflate(R.layout.layout_custom_callout_balloon, null)
+//
+//        override fun getCalloutBalloon(poiItem: MapPOIItem): View {
+//            (mCalloutBalloon.findViewById<View>(R.id.badge) as ImageView).setImageResource(R.drawable.ic_launcher)
+//            (mCalloutBalloon.findViewById<View>(R.id.title) as TextView).text = poiItem.itemName
+//            (mCalloutBalloon.findViewById<View>(R.id.desc) as TextView).text =
+//                "Custom CalloutBalloon"
+//            return mCalloutBalloon
+//        }
+//
+//        override fun getPressedCalloutBalloon(poiItem: MapPOIItem): View? { return null }
+//
+//    }
 
 }

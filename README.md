@@ -16,7 +16,7 @@
 1. icon : Icons were made by their manufacturer from Flaticon(https://www.flaticon.com)
     1. Eucalyp(https://www.flaticon.com/authors/eucalyp)
     2. Freepik(https://www.freepik.com)
-    3.
+    3. Smashicons(https://www.flaticon.com/authors/smashicons)
 
 2. opensource
-
+   https://www.notion.so/Project-Detail-App-6e5f05d042ff41deabb7be759e3d9e73

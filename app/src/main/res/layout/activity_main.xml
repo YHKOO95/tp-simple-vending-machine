@@ -30,7 +30,7 @@
 
         <LinearLayout
             android:id="@+id/mainDrawerLayout"
-            android:layout_width="300dp"
+            android:layout_width="200dp"
             android:layout_height="match_parent"
             android:layout_gravity="end">
 

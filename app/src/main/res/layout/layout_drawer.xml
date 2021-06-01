@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        android:paddingHorizontal="30dp">
+        android:paddingHorizontal="20dp">
 
         <LinearLayout
             android:layout_above="@id/copyrightView"
@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingVertical="20dp">
+                android:paddingVertical="10dp">
 
                 <ImageView
                     android:layout_width="60dp"
@@ -51,11 +51,11 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingVertical="20dp">
+                android:paddingVertical="10dp">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:contentDescription=""
                     android:src="@drawable/icon_home" />
 
@@ -65,7 +65,7 @@
                     android:layout_marginStart="20dp"
                     android:text="@string/home"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -76,11 +76,11 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingVertical="20dp">
+                android:paddingVertical="10dp">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:contentDescription=""
                     android:src="@drawable/icon_search" />
 
@@ -90,7 +90,7 @@
                     android:layout_marginStart="20dp"
                     android:text="@string/search"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -101,11 +101,11 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingVertical="20dp">
+                android:paddingVertical="10dp">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:contentDescription=""
                     android:src="@drawable/icon_wallet" />
 
@@ -115,7 +115,7 @@
                     android:layout_marginStart="20dp"
                     android:text="@string/wallet"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -126,11 +126,11 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:orientation="horizontal"
-                android:paddingVertical="20dp">
+                android:paddingVertical="10dp">
 
                 <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:contentDescription=""
                     android:src="@drawable/icon_setting" />
 
@@ -140,7 +140,7 @@
                     android:layout_marginStart="20dp"
                     android:text="@string/setting"
                     android:textColor="@color/black"
-                    android:textSize="25sp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -148,7 +148,6 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginVertical="10dp"
                 android:background="@color/gray_cc" />
 
             <LinearLayout
@@ -161,8 +160,8 @@
                 android:paddingVertical="10dp">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:contentDescription=""
                     android:src="@drawable/icon_cs_center" />
 
@@ -172,7 +171,7 @@
                     android:layout_marginStart="20dp"
                     android:text="@string/cs_center"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -187,9 +186,8 @@
                 android:paddingVertical="10dp">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:contentDescription=""
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:src="@drawable/icon_cart" />
 
                 <TextView
@@ -198,7 +196,7 @@
                     android:layout_marginStart="20dp"
                     android:text="@string/purchase_manage"
                     android:textColor="@color/black"
-                    android:textSize="20sp"
+                    android:textSize="15dp"
                     android:textStyle="bold" />
 
             </LinearLayout>
@@ -206,18 +204,16 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginVertical="10dp"
                 android:background="@color/gray_cc" />
-
-
         </LinearLayout>
 
         <TextView
             android:paddingBottom="20dp"
             android:id="@+id/copyrightView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
+            android:textSize="10dp"
             android:text="Copyright 2021. YoungHoi Koo, Saejoon Park\nAll Rights Reserved." />
 
     </RelativeLayout>

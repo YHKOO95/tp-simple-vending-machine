@@ -1,13 +1,12 @@
-package com.tp2021.tp_simple_vending_machine.view.main
+package com.tp2021.tp_simple_vending_machine.view.common
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.tp2021.tp_simple_vending_machine.base.BaseFragment
 
-class MainPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragmentActivity) {
-
-    var fragments : ArrayList<BaseFragment.MainFragmentListener> = ArrayList()
+class ViewPagerAdapter(fragmentActivity: FragmentActivity, var fragments: ArrayList<BaseFragment.FragmentExtension>)
+    : FragmentStateAdapter(fragmentActivity) {
 
     override fun getItemCount(): Int = fragments.size
 

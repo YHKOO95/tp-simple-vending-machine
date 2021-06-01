@@ -48,7 +48,7 @@ abstract class BaseFragment<T : ViewDataBinding, R : BaseViewModel> : Fragment()
 
     }
 
-    interface MainFragmentListener {
+    interface FragmentExtension {
         fun refreshFragment()
     }
 

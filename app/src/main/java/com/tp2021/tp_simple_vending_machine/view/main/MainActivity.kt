@@ -12,7 +12,9 @@ import com.tp2021.tp_simple_vending_machine.R
 import com.tp2021.tp_simple_vending_machine.base.BaseActivity
 import com.tp2021.tp_simple_vending_machine.base.BaseFragment
 import com.tp2021.tp_simple_vending_machine.databinding.ActivityMainBinding
+import com.tp2021.tp_simple_vending_machine.utils.ViewUtils.setStatusbarColorCode
 import com.tp2021.tp_simple_vending_machine.utils.delayClicks
+import com.tp2021.tp_simple_vending_machine.view.common.ViewPagerAdapter
 import com.tp2021.tp_simple_vending_machine.view.main.home.HomeFragment
 import com.tp2021.tp_simple_vending_machine.view.main.search.SearchFragment
 import com.tp2021.tp_simple_vending_machine.view.main.setting.SettingFragment
@@ -40,9 +42,9 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
             mainViewPager.run {
                 isUserInputEnabled = false // 스와핑 제한
                 offscreenPageLimit = 4
-                adapter = MainPagerAdapter(this@MainActivity).apply {
-                    fragments = fragmentList as ArrayList<BaseFragment.MainFragmentListener>
-                }
+                adapter = ViewPagerAdapter(
+                    fragmentActivity = this@MainActivity,
+                    fragments = fragmentList as ArrayList<BaseFragment.FragmentExtension>)
             }
         }
 
@@ -70,7 +72,7 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
         }
     }
 
-    fun navigationChange(index : Int){
+    private fun navigationChange(index : Int){
         viewDataBinding.run {
             mainViewPager.setCurrentItem(index, false)
             drawerLayout.closeDrawers()
@@ -87,10 +89,10 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                     val slideX = drawerView.width * slideOffset
                     mainContentLayout.translationX = -slideX
                     if (drawerLayout.isDrawerOpen(Gravity.RIGHT) && !drawerFlag) {
-                        setStatusbarColorCode(R.color.white)
+                        setStatusbarColorCode(this@MainActivity, R.color.white)
                         drawerFlag = true
                     } else if (!drawerFlag) {
-                        setStatusbarColorCode(R.color.white)
+                        setStatusbarColorCode(this@MainActivity, R.color.white)
                         drawerFlag = true
                     }
                 }
@@ -114,13 +116,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     @SuppressLint("WrongConstant")
     fun openDrawer() {
         viewDataBinding.drawerLayout.openDrawer(GravityCompat.END)
-    }
-
-    fun setStatusbarColorCode(colorCode: Int) {
-        val window = window
-        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
-        window.statusBarColor = ContextCompat.getColor(this, colorCode)
-
     }
 
 }

@@ -50,9 +50,7 @@ public class CustomEditText extends AppCompatEditText implements TextWatcher, Vi
         clearDrawable.setBounds(0, 0, clearDrawable.getIntrinsicWidth(), clearDrawable.getIntrinsicHeight());
         setClearIconVisible(false);
         super.setOnTouchListener(this);
-        super.setOnFocusChangeListener(
-                this
-        );
+        super.setOnFocusChangeListener(this);
         addTextChangedListener(this);
     }
 

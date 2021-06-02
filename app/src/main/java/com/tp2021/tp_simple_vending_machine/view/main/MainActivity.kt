@@ -1,6 +1,7 @@
 package com.tp2021.tp_simple_vending_machine.view.main
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
@@ -19,6 +20,7 @@ import com.tp2021.tp_simple_vending_machine.view.main.home.HomeFragment
 import com.tp2021.tp_simple_vending_machine.view.main.search.SearchFragment
 import com.tp2021.tp_simple_vending_machine.view.main.setting.SettingFragment
 import com.tp2021.tp_simple_vending_machine.view.main.wallet.WalletFragment
+import com.tp2021.tp_simple_vending_machine.view.manage.ManageActivity
 import com.tp2021.tp_simple_vending_machine.viewModel.main.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -66,6 +68,8 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                 addDisposable(drawerView.searchLayout.delayClicks { navigationChange(1) })
                 addDisposable(drawerView.walletLayout.delayClicks { navigationChange(2) })
                 addDisposable(drawerView.settingLayout.delayClicks { navigationChange(3) })
+
+                addDisposable(drawerView.purchaseLayout.delayClicks { startActivity(Intent (this@MainActivity, ManageActivity::class.java))})
 
 
             }

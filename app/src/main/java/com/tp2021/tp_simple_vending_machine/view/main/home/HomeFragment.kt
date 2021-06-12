@@ -1,60 +1,42 @@
 package com.tp2021.tp_simple_vending_machine.view.main.home
 
-import android.view.View
-import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import com.tp2021.tp_simple_vending_machine.R
-import com.tp2021.tp_simple_vending_machine.base.BaseFragment
-import com.tp2021.tp_simple_vending_machine.databinding.FragmentHomeBinding
-import com.tp2021.tp_simple_vending_machine.view.main.MainActivity
-import com.tp2021.tp_simple_vending_machine.viewModel.main.MainViewModel
-import net.daum.mf.map.api.*
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import com.naver.maps.geometry.LatLng
+import com.naver.maps.map.CameraPosition
+import com.naver.maps.map.NaverMap
+import com.naver.maps.map.OnMapReadyCallback
 
 
-class HomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(){
+class HomeFragment : BaseHomeFragment(), OnMapReadyCallback {
 
-    override val layoutId: Int
-        get() = R.layout.fragment_home
-
-    override val viewModel: MainViewModel by viewModel()
 
     override fun initStartView() {
 
-//        val mapView = MapView(activity)
-//
-//        val mapViewContainer = viewDataBinding.mapContainer as ViewGroup
-//
-//        mapViewContainer.addView(mapView)
+        viewDataBinding.mapView.getMapAsync(this);
+
+
     }
 
     override fun initDataBinding() {
-
-
 
     }
 
     override fun initAfterBinding() {
 
+    }
 
+    override fun onMapReady(p0: NaverMap) {
+        naverMap = p0
+
+        p0.cameraPosition = CameraPosition(LatLng(37.543954, 127.047374), ZOOM_VALUE)
+
+        setMarkerList()
 
     }
 
-//    // CalloutBalloonAdapter 인터페이스 구현
-//    inner class CustomCalloutBalloonAdapter : CalloutBalloonAdapter {
-//        private val mCalloutBalloon: View = layoutInflater.inflate(R.layout.layout_custom_callout_balloon, null)
-//
-//        override fun getCalloutBalloon(poiItem: MapPOIItem): View {
-//            (mCalloutBalloon.findViewById<View>(R.id.badge) as ImageView).setImageResource(R.drawable.ic_launcher)
-//            (mCalloutBalloon.findViewById<View>(R.id.title) as TextView).text = poiItem.itemName
-//            (mCalloutBalloon.findViewById<View>(R.id.desc) as TextView).text =
-//                "Custom CalloutBalloon"
-//            return mCalloutBalloon
-//        }
-//
-//        override fun getPressedCalloutBalloon(poiItem: MapPOIItem): View? { return null }
-//
-//    }
+    fun setMarkerList(){
+
+        viewModel.mapMarkerList.forEach { setMark(it) }
+
+    }
 
 }

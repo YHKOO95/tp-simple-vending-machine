@@ -2,6 +2,7 @@ package com.tp2021.tp_simple_vending_machine.view.main
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.view.Gravity
 import android.view.View
 import android.view.WindowManager
@@ -9,6 +10,7 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import com.naver.maps.map.LocationTrackingMode
 import com.tp2021.tp_simple_vending_machine.R
 import com.tp2021.tp_simple_vending_machine.base.BaseActivity
 import com.tp2021.tp_simple_vending_machine.base.BaseFragment
@@ -121,5 +123,6 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
     fun openDrawer() {
         viewDataBinding.drawerLayout.openDrawer(GravityCompat.END)
     }
+
 
 }

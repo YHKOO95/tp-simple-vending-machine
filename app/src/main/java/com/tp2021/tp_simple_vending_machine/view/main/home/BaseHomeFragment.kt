@@ -93,7 +93,7 @@ abstract class BaseHomeFragment : BaseFragment<FragmentHomeBinding, MainViewMode
 
     fun setMarkerList(){
 
-        viewModel.mapMarkerList.forEach { setMark(it) }
+        viewModel.mapMarkerList.map { it.vmLocation.mapMarker }.forEach { setMark(it) }
 
     }
 

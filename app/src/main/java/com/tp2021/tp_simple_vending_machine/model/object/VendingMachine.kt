@@ -5,11 +5,11 @@ import java.io.Serializable
 
 data class VendingMachine(
 
-    @SerializedName("vmId") var vmId : String,
+    @SerializedName("vmId") var vmId : String? = null,
     @SerializedName("vmName") var vmName : String,
-    @SerializedName("vmStatus") var vmStatus : String,
-    @SerializedName("vmChanges") var vmChanges : Int,
-    @SerializedName("vmItemList") var vmItemList : List<VendingMachineItem>,
+    @SerializedName("vmStatus") var vmStatus : String? = null,
+    @SerializedName("vmChanges") var vmChanges : Int? = null,
+    @SerializedName("vmItemList") var vmItemList : List<VendingMachineItem>? = null,
     @SerializedName("vmLocation") var vmLocation : VendingMachineLocation,
     @SerializedName("vmLocationName") var vmLocationName : String? = null
 

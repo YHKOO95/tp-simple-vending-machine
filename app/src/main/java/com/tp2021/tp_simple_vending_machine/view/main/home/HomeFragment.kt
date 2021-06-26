@@ -19,7 +19,7 @@ class HomeFragment : BaseHomeFragment(){
     override fun initDataBinding() {
         with(viewModel){
             myLocationPermissionLiveData.observe(this@HomeFragment, Observer {
-
+                ShowToast(context, it)
 
 
             })
@@ -28,6 +28,8 @@ class HomeFragment : BaseHomeFragment(){
     }
 
     override fun initAfterBinding() {
+
+
 
 
 

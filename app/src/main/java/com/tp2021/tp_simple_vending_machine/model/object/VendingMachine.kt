@@ -7,10 +7,14 @@ data class VendingMachine(
 
     @SerializedName("vmId") var vmId : String? = null,
     @SerializedName("vmName") var vmName : String,
-    @SerializedName("vmStatus") var vmStatus : String? = null,
+    @SerializedName("vmStatus") var vmStatus : VendingMachineStatus? = null,
     @SerializedName("vmChanges") var vmChanges : Int? = null,
     @SerializedName("vmItemList") var vmItemList : List<VendingMachineItem>? = null,
     @SerializedName("vmLocation") var vmLocation : VendingMachineLocation,
     @SerializedName("vmLocationName") var vmLocationName : String? = null
 
-    ) : Serializable
+) : Serializable
+
+enum class VendingMachineStatus(val text : String) {
+    AVAILABLE("사용가능"), NOT_AVAILABLE("사용불가")
+}

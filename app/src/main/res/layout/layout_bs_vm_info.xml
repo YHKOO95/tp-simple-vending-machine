@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.tp2021.tp_simple_vending_machine.viewModel.main.MainViewModel" />
+
+        <variable
+            name="item"
+            type="com.tp2021.tp_simple_vending_machine.model.object.VendingMachine" />
+
+        <import type="com.tp2021.tp_simple_vending_machine.model.object.VendingMachineStatus"/>
+
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="10dp"
+        android:background="@drawable/box_bs_radius20">
+
+        <RelativeLayout
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vmStatusView"
+                android:textSize="14dp"
+                android:text="@{item.vmStatus.text}"
+                android:textColor="@{item.vmStatus == VendingMachineStatus.AVAILABLE ? @color/green : @color/red}"
+                tools:text="사용가능"/>
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_marginHorizontal="10dp"
+                android:layout_toStartOf="@id/vmImageView"
+                android:layout_toEndOf="@id/vmStatusView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vmNameView"
+                android:textSize="16dp"
+                tools:text="자판기기"
+                android:text="@{item.vmName}"
+                android:textStyle="bold"/>
+
+            <ImageView
+                android:layout_centerVertical="true"
+                android:layout_alignParentEnd="true"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/vmImageView"
+                android:src="@drawable/icon_location" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+</layout>

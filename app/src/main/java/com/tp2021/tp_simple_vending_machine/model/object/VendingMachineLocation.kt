@@ -13,9 +13,9 @@ data class VendingMachineLocation(
 ) : Serializable {
 
     val mapLocation : LatLng
-        get() = if(x != null && y != null) LatLng(x ?: 0.0, y ?: 0.0) else LatLng(37.543954, 127.047374)
+        get() = LatLng(x ?: 37.543954, y ?: 127.047374)
 
     val mapMarker : Marker
-        get() = if(x != null && y != null) Marker(mapLocation) else Marker(LatLng(37.543954, 127.047374))
+        get() = Marker(mapLocation)
 
 }

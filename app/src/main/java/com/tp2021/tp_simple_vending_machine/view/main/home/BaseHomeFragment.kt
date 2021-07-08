@@ -1,7 +1,12 @@
 package com.tp2021.tp_simple_vending_machine.view.main.home
 
+import android.content.Context
+import android.location.Location
+import android.location.LocationManager
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.getSystemService
 import com.naver.maps.geometry.LatLng
 import com.naver.maps.map.LocationTrackingMode
 import com.naver.maps.map.NaverMap
@@ -15,6 +20,7 @@ import com.tp2021.tp_simple_vending_machine.base.BaseFragment
 import com.tp2021.tp_simple_vending_machine.databinding.FragmentHomeBinding
 import com.tp2021.tp_simple_vending_machine.viewModel.main.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.util.jar.Manifest
 
 abstract class BaseHomeFragment : BaseFragment<FragmentHomeBinding, MainViewModel>(),
     OnMapReadyCallback, Overlay.OnClickListener  {
@@ -118,5 +124,8 @@ abstract class BaseHomeFragment : BaseFragment<FragmentHomeBinding, MainViewMode
             true
         } else false
     }
+
+
+
 
 }

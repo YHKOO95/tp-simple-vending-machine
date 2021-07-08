@@ -92,7 +92,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginStart="5dp"
                             android:textSize="13dp"
-                            android:text="@{item.vmStatus}"
+                            android:text="@{item.vmStatus.text}"
                             tools:text="사용여부 : 사용 가능" />
                     </LinearLayout>
 

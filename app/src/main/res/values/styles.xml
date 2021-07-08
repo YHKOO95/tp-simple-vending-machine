@@ -8,6 +8,7 @@
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:textCursorDrawable">@drawable/black_text_cursor</item>
         <item name="android:statusBarColor">@color/white</item>
+        <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
 
     </style>
 
@@ -34,6 +35,17 @@
     <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
         <item name="colorControlHighlight">@color/blue</item>
         <item name="colorAccent">@color/blue</item>
+    </style>
+
+    <style name="AppBottomSheetDialogTheme" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/AppBottomSheetModalStyle</item>
+        <item name="android:windowSoftInputMode">adjustResize</item>
+        <item name="android:configChanges">screenSize</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+
+    <style name="AppBottomSheetModalStyle" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/box_bs_radius20</item>
     </style>
 
 

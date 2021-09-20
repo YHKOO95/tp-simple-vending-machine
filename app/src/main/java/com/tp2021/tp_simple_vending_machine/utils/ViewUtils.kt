@@ -8,7 +8,7 @@ import kotlin.math.round
 
 object ViewUtils {
 
-    fun setStatusbarColorCode(activity : Activity, colorCode: Int) {
+    fun setStatusBarColorCode(activity : Activity, colorCode: Int) {
         val window = activity.window
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor = ContextCompat.getColor(activity, colorCode)

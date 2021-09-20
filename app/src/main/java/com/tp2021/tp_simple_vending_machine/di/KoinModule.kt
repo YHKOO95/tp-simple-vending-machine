@@ -1,4 +1,4 @@
-package com.tp2021.tp_simple_vending_machine.module
+package com.tp2021.tp_simple_vending_machine.di
 
 import com.tp2021.tp_simple_vending_machine.model.datamodel.MainDataModel
 import com.tp2021.tp_simple_vending_machine.model.datamodel.impl.MainDataModelImpl
@@ -11,8 +11,8 @@ import com.tp2021.tp_simple_vending_machine.viewModel.manage.ManageViewModel
 import com.tp2021.tp_simple_vending_machine.viewModel.search.SearchViewModel
 import com.tp2021.tp_simple_vending_machine.viewModel.setting.SettingViewModel
 import com.tp2021.tp_simple_vending_machine.viewModel.wallet.WalletViewModel
-import org.koin.androidx.viewmodel.ext.koin.viewModel
-import org.koin.dsl.module.module
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.module
 
 var modelModule = module {
     factory<MainDataModel> { MainDataModelImpl(get()) }
@@ -41,4 +41,6 @@ var adapterModule = module {
 
 }
 
-var diModule = listOf(modelModule, networkModule, viewModelModule, adapterModule)
+var repositoryModule = module {}
+
+var diModule = listOf(modelModule, networkModule, viewModelModule, adapterModule, repositoryModule)

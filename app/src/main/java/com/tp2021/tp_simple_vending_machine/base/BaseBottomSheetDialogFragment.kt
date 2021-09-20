@@ -40,9 +40,6 @@ abstract class BaseBottomSheetDialogFragment<T : ViewDataBinding, L : BaseViewMo
         initDataBinding()
         initAfterBinding()
 
-//        view.findViewById<ImageView>(R.id.popupCloseBtnView)?.let { closeBtn ->
-//            viewModel.addDisposable(closeBtn.delayClicks { dismiss() })
-//        }
     }
 }
 

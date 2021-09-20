@@ -2,20 +2,17 @@ package com.tp2021.tp_simple_vending_machine.view.main
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.view.Gravity
 import android.view.View
-import android.view.WindowManager
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import com.naver.maps.map.LocationTrackingMode
 import com.tp2021.tp_simple_vending_machine.R
 import com.tp2021.tp_simple_vending_machine.base.BaseActivity
 import com.tp2021.tp_simple_vending_machine.base.BaseFragment
 import com.tp2021.tp_simple_vending_machine.databinding.ActivityMainBinding
-import com.tp2021.tp_simple_vending_machine.utils.ViewUtils.setStatusbarColorCode
+import com.tp2021.tp_simple_vending_machine.utils.ViewUtils.setStatusBarColorCode
 import com.tp2021.tp_simple_vending_machine.utils.delayClicks
 import com.tp2021.tp_simple_vending_machine.view.common.ViewPagerAdapter
 import com.tp2021.tp_simple_vending_machine.view.main.home.HomeFragment
@@ -95,10 +92,10 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
                     val slideX = drawerView.width * slideOffset
                     mainContentLayout.translationX = -slideX
                     if (drawerLayout.isDrawerOpen(Gravity.RIGHT) && !drawerFlag) {
-                        setStatusbarColorCode(this@MainActivity, R.color.white)
+                        setStatusBarColorCode(this@MainActivity, R.color.white)
                         drawerFlag = true
                     } else if (!drawerFlag) {
-                        setStatusbarColorCode(this@MainActivity, R.color.white)
+                        setStatusBarColorCode(this@MainActivity, R.color.white)
                         drawerFlag = true
                     }
                 }

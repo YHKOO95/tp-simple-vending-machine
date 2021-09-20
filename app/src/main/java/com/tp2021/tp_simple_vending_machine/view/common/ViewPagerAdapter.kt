@@ -5,6 +5,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.tp2021.tp_simple_vending_machine.base.BaseFragment
 
+// Adapter for Viewpager2
 class ViewPagerAdapter(fragmentActivity: FragmentActivity, var fragments: ArrayList<BaseFragment.FragmentExtension>)
     : FragmentStateAdapter(fragmentActivity) {
 

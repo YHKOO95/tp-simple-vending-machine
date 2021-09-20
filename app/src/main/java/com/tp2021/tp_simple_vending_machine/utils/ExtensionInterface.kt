@@ -19,14 +19,10 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import java.util.concurrent.TimeUnit
 
-val ShowToast =
-    { context: Context?, msg: String? ->
-        Toast.makeText(
-            context,
-            msg ?: "오류가 발생했습니다. 다시 시도해 주세요.",
-            Toast.LENGTH_LONG
-        ).show()
-    }
+val Context?.showToast: (String?) -> Unit
+    get() = { msg: String? ->
+            Toast.makeText(this, msg ?: "오류가 발생했습니다. 다시 시도해 주세요.", Toast.LENGTH_LONG).show()
+        }
 
 fun View.delayClicks(subscribe: (t: Unit) -> Unit): Disposable =
     this.clicks().throttleFirst(350, TimeUnit.MILLISECONDS)
